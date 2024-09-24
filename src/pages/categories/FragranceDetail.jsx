@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const ProductDetail = () => {
+const FragranceDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState();
 
@@ -25,10 +25,10 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center p-2">
+      <div className="flex flex-col items-center p-2 ">
         {product ? (
           <>
-            <div className="grid grid-cols-3 items-center ">
+            <div className="grid grid-cols-3 items-center">
               {/* Gambar Product */}
               <div className="w-fit p-2">
                 <figure>
@@ -104,24 +104,24 @@ const ProductDetail = () => {
         )}
 
         {/* {product.reviews.map((review) => (
-          <>
-            <h2 className="text-center">Review</h2>
-            <div key={review.id}>
-              <div className="card bg-base-100 w-96 shadow-xl">
-                <div className="card-body">
-                  <h2 className="card-title">
-                    <h3 className="font-semibold text-xl">{review.reviewerName}</h3> <span className="text-xs">{review.date}</span>
-                  </h2>
-                  <p className="text-sm">{review.comment}</p>
-                  <p>{review.rating} ⭐</p>
+            <>
+              <h2 className="text-center">Review</h2>
+              <div key={review.id}>
+                <div className="card bg-base-100 w-96 shadow-xl">
+                  <div className="card-body">
+                    <h2 className="card-title">
+                      <h3 className="font-semibold text-xl">{review.reviewerName}</h3> <span className="text-xs">{review.date}</span>
+                    </h2>
+                    <p className="text-sm">{review.comment}</p>
+                    <p>{review.rating} ⭐</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </>
-        ))} */}
+            </>
+          ))} */}
 
         <div className="flex-none justify-start mt-4">
-          <Link className="btn btn-sm btn-secondary" to={"/"}>
+          <Link className="btn btn-sm btn-secondary" to={"/category/fragrances"}>
             Kembali...
           </Link>
         </div>
@@ -130,4 +130,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default FragranceDetail;

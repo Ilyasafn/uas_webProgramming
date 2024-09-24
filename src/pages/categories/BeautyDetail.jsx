@@ -25,10 +25,10 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center p-2">
+      <div className="flex flex-col items-center p-2 ">
         {product ? (
           <>
-            <div className="grid grid-cols-3 items-center ">
+            <div className="grid grid-cols-3 items-center">
               {/* Gambar Product */}
               <div className="w-fit p-2">
                 <figure>
@@ -121,7 +121,7 @@ const ProductDetail = () => {
         ))} */}
 
         <div className="flex-none justify-start mt-4">
-          <Link className="btn btn-sm btn-secondary" to={"/"}>
+          <Link className="btn btn-sm btn-secondary" to={"/category/beauty"}>
             Kembali...
           </Link>
         </div>

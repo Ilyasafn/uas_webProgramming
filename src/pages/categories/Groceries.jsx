@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProductList = () => {
-  const apiurl = "https://dummyjson.com/products/";
-
+const Groceries = () => {
   const [products, setProducts] = useState([]);
+  const apiurl = "https://dummyjson.com/products/category/groceries/";
 
   useEffect(() => {
     fetch(apiurl)
@@ -19,13 +18,12 @@ const ProductList = () => {
       currency: "USD",
     }).format(price);
   };
-
   return (
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
         {products.map((product) => (
           <div key={product.id}>
-            <Link to={"/details/" + product.id}>
+            <Link to={"/category/groceries/" + product.id}>
               <div className="card bg-slate-800  p-2">
                 <figure className="px-10 pt-10">
                   <img src={product.thumbnail} alt="" className="rounded-xl" />
@@ -43,7 +41,7 @@ const ProductList = () => {
                   <small className="text-xs">
                     ⭐ {product.rating} | {product.stock} left in stocks.
                   </small>
-                  <div className="card-actions justify-end">
+                  <div className="card-actions justify-end ">
                     {product.tags.map((tag) => (
                       <>
                         <div className="badge badge-outline badge-xs">{tag}</div>
@@ -60,4 +58,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default Groceries;
